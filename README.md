@@ -4,7 +4,7 @@ A simple live activity ios for flutter
 
 ## Getting Started
 
-> Add an iOS platform-specific implementation
+### Add an iOS platform-specific implementation
 
 Open the file [AppDelegate.swift](https://github.com/RahmadFani/flutter_ios_live_activity_sample/) located under Runner > Runner in the Project navigator.
 
@@ -39,7 +39,7 @@ if (call.method == "start") {
 // and end live activity ios...
 ```
 
-> Flutter to call/invoke native code
+### Flutter to call/invoke native code
 
 Open the file [main.dart](https://github.com/RahmadFani/flutter_ios_live_activity_sample/) locate under lib\main.dart
 
@@ -67,7 +67,7 @@ try {
 }
 ```
 
-> Edit/Custom Live activity ios
+### Edit/Custom Live activity ios
 
 You can edit/custom Live activity ios [sample_ios_live_activityLiveActivity.swift](https://github.com/RahmadFani/flutter_ios_live_activity_sample/blob/main/ios/sample_ios_live_activity/sample_ios_live_activityLiveActivity.swift), located at ios/flutter_ios_live_activity_sample or you can make new live activity, to make new you need open [Runner.xcworkspace] locate at ios after than open, choose File > New > Target. then search widget extension
 

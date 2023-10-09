@@ -1,16 +1,73 @@
 # flutter_live_activity_sample
 
-A new Flutter project.
+A simple live activity ios for flutter
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+> Add an iOS platform-specific implementation
 
-A few resources to get you started if this is your first Flutter project:
+Open the file [AppDelegate.swift](https://github.com/RahmadFani/flutter_ios_live_activity_sample/) located under Runner > Runner in the Project navigator.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+``` swift
+let liveChannel = FlutterMethodChannel(name: "samples.flutter.dev/liveChannel",
+                                                    binaryMessenger: controller.binaryMessenger)
+// native to start live activity ios
+if (call.method == "start") {
+  do {
+      let adventure = sample_ios_live_activityAttributes(name: "Sample")
+  
+      let initialState = sample_ios_live_activityAttributes.ContentState(
+        value: 0
+      )
+      
+      activity = try Activity.request(
+          attributes: adventure,
+          content: .init(state: initialState, staleDate: nil),
+          pushType: nil
+      )
+      
+  } catch {
+      let errorMessage = """
+                  Couldn't start activity
+                  ------------------------
+                  \(String(describing: error))
+                  """
+      
+      result(FlutterError(code: "400", message: errorMessage, details: error))
+  }
+}
+// and end live activity ios...
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> Flutter to call/invoke native code
+
+Open the file [main.dart](https://github.com/RahmadFani/flutter_ios_live_activity_sample/) locate under lib\main.dart
+
+For start live activity ios 
+
+``` dart 
+const platform = MethodChannel('samples.flutter.dev/liveChannel');
+
+try {
+  await platform.invokeMethod('start');
+} on PlatformException {
+  // ! Error code here
+}
+```
+
+For End live activity ios 
+
+``` dart 
+const platform = MethodChannel('samples.flutter.dev/liveChannel');
+
+try {
+  await platform.invokeMethod('end');
+} on PlatformException {
+  // ! Error code here
+}
+```
+
+> Edit/Custom Live activity ios
+
+You can edit/custom Live activity ios [sample_ios_live_activityLiveActivity.swift](https://github.com/RahmadFani/flutter_ios_live_activity_sample/blob/main/ios/sample_ios_live_activity/sample_ios_live_activityLiveActivity.swift), located at ios/flutter_ios_live_activity_sample or you can make new live activity, to make new you need open [Runner.xcworkspace] locate at ios after than open, choose File > New > Target. then search widget extension
+

@@ -4,6 +4,8 @@ A simple live activity ios for flutter
 
 ## Getting Started
 
+make sure your xcode is up to date to make this example works..
+
 ### Add an iOS platform-specific implementation
 
 Open the file [AppDelegate.swift](https://github.com/RahmadFani/flutter_ios_live_activity_sample/) located under Runner > Runner in the Project navigator.

@@ -1,4 +1,4 @@
-# flutter_live_activity_sample
+# flutter_live_activity_ios_sample
 
 A simple live activity ios for flutter
 

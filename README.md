@@ -2,6 +2,11 @@
 
 A simple live activity ios for flutter
 
+
+### Next Progress
+- Live activity update
+- Update live activity with push notification
+
 ## Getting Started
 
 make sure your xcode is up to date to make this example works..
